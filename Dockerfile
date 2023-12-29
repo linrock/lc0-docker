@@ -18,12 +18,12 @@ RUN CC=clang CXX=clang++ ./build.sh
 
 WORKDIR /root
 COPY .bash_profile .
-RUN echo 'source .bash_profile' >> .bashrc
+RUN echo 'source ~/.bash_profile' >> .bashrc
 
 WORKDIR /root/lc0/build/release
 RUN wget https://github.com/LeelaChessZero/lczero-client/releases/download/v34/lc0-training-client-linux
 COPY *.json .
+COPY run_on_all_gpus.sh .
 
-WORKDIR /root
-
-CMD sleep infinity
+# CMD sleep infinity
+CMD ["./run_on_all_gpus.sh"]
