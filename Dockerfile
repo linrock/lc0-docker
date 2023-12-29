@@ -13,9 +13,8 @@ RUN --mount=type=cache,target=/root/.cache/pip pip3 install \
 
 RUN git clone https://github.com/LeelaChessZero/lc0 /root/lc0
 WORKDIR /root/lc0
-# RUN git checkout rescore_tb
+RUN git checkout releases/tag/v0.30.0
 RUN CC=clang CXX=clang++ ./build.sh
-# RUN cp build/release/rescorer /usr/local/bin
 
 WORKDIR /root
 COPY .bash_profile .
