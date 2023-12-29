@@ -22,6 +22,7 @@ RUN echo 'source .bash_profile' >> .bashrc
 
 WORKDIR /root/lc0/build/release
 RUN wget https://github.com/LeelaChessZero/lczero-client/releases/download/v34/lc0-training-client-linux
+COPY *.json .
 
 WORKDIR /root
 
