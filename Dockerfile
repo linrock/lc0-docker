@@ -12,7 +12,7 @@ RUN --mount=type=cache,target=/root/.cache/pip pip3 install \
 
 RUN git clone https://github.com/LeelaChessZero/lc0 /root/lc0
 WORKDIR /root/lc0
-RUN git checkout release/0.30
+RUN git checkout release/0.31
 RUN CC=clang CXX=clang++ ./build.sh
 
 WORKDIR /root
